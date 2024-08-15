@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reverse Array and Add 100</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            font-size: 16px;
+            width: 300px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        p#result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reverse Array and Add 100</h1>
+
+    <label for="arrayInput">Enter array elements:</label>
+    <input type="text" id="arrayInput">
+    <button onclick="reverseAndAdd100()">Reverse and Add 100</button>
+
+    
+    <p id="result"></p>
+
+    <script>
+        function reverseAndAdd100() {
+            const inputArray = document.getElementById("arrayInput").value.split(",");
+
+            const reversedArray = [];
+            for (let i = inputArray.length - 1; i >= 0; i--) {
+                reversedArray.push(inputArray[i].trim());
+            }
+
+            const modifiedArray = [];
+
+            for (let i = 0; i < reversedArray.length; i++) {
+                const element = parseInt(reversedArray[i], 10);
+                modifiedArray.push(element + 100);
+            }
+
+            // Display the modified array
+            document.getElementById("result").textContent = `Reversed and Modified Array: [${modifiedArray.join(", ")}]`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: paleturquoise;
+}
+
+.container {
+    text-align: center;
+    margin: 20px;
+}
+
+.tourist-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.tourist-list li {
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid #f52f2f;
+    margin: 5px;
+}
+
+.image-container img {
+    display: none;
+    max-width: 100%;
+}
+
+button {
+    margin-top: 20px;
+}

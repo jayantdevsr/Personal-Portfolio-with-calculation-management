@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Electricity Bill Calculator</title>
+    <link rel="stylesheet" href="/HTMLcodes/labactivity2/css/style.css">
+    <script>
+        function calculateBill() {
+            // Get input values
+            var name = document.getElementById("name").value;
+            var mobileNumber = document.getElementById("mobileNumber").value;
+            var email = document.getElementById("email").value;
+            var unitsConsumed = parseFloat(document.getElementById("unitsConsumed").value);
+
+            // Validate 
+            if (name === "" || mobileNumber === "" || email === "" || isNaN(unitsConsumed)) {
+                alert("Please fill in all fields and provide a valid units consumed value.");
+                return;
+            }
+
+            // Calculate bill based on unit slabs
+            var totalAmount = 0;
+            if (unitsConsumed <= 50) {
+                totalAmount = unitsConsumed * 3.50;
+            } else if (unitsConsumed <= 150) {
+                totalAmount = 50 * 3.50 + (unitsConsumed - 50) * 4.00;
+            } else if (unitsConsumed <= 250) {
+                totalAmount = 50 * 3.50 + 100 * 4.00 + (unitsConsumed - 150) * 5.20;
+            } else {
+                totalAmount = 50 * 3.50 + 100 * 4.00 + 100 * 5.20 + (unitsConsumed - 250) * 6.50;
+            }
+
+            // Display the bill amount
+            var confirmation = "Name: " + name +
+                               "\nMobile Number: " + mobileNumber +
+                               "\nEmail: " + email +
+                               "\nUnits Consumed: " + unitsConsumed +
+                               "\nTotal Amount Payable: Rs. " + totalAmount.toFixed(2);
+
+            // Display confirmation 
+            if (confirm(confirmation)) {
+                
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Electricity Bill Calculator</h1>
+    <form>
+        Name: <input type="text" id="name"><br>
+        Mobile Number: <input type="text" id="mobileNumber"><br>
+        Email: <input type="email" id="email"><br>
+        Units Consumed: <input type="number" id="unitsConsumed"><br>
+        <button type="button" onclick="calculateBill()">Calculate Bill</button>
+    </form>
+</body>
+</html>

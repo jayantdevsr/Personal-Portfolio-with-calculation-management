@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checking alert box for Hello</title>
+</head>
+<body>
+    <h3>Hello Welcome</h3>
+
+    <button id="printButton">Print "Hello Welcome"</button>
+
+    <input type="text" id="messageInput" placeholder="Enter a message">
+    <button id="alertButton">Display</button>
+
+    <script>
+        // JavaScript
+        document.getElementById("printButton").addEventListener("click", function () {
+            alert("Hello Welcome");
+        });
+
+        document.getElementById("alertButton").addEventListener("click", function () {
+            var message = document.getElementById("messageInput").value;
+            alert(message);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic List with JavaScript's map()</title>
+</head>
+<body>
+    <h1>Dynamic List Example</h1>
+    <ul id="itemList">
+        <!-- Items will be added here -->
+    </ul>
+
+    <script>
+        // Sample data for demonstration
+        const itemsData = [
+            'Item 1',
+            'Item 2',
+            'Item 3',
+            'Item 4',
+            'Item 5'
+        ];
+
+        // Access the <ul> element
+        const itemListElement = document.getElementById('itemList');
+
+        // Use the map() function to generate list items
+        const listItems = itemsData.map(item => 
+        {
+            const li = document.createElement('li');
+            li.textContent = item;
+            return li;
+        });
+
+        // Append the list items to the <ul> element
+        listItems.forEach(item => {
+            itemListElement.appendChild(item);
+        });
+    </script>
+</body>
+</html>

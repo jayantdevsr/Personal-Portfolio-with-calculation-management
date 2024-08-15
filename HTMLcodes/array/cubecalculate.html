@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cube Calculator</title>
+</head>
+<body>
+    <h1>Cube Calculator In Aray</h1>
+
+    <script>
+        // Array of numbers
+        const numbers = [2, 3, 5, 7, 10];
+
+        // calculating the cube and storing the value in a new array
+        const cubes = numbers.map(number => Math.pow(number, 3));
+
+        // Displaying
+        document.write('<h2>Original Numbers and Their Cubes:</h2>');
+        document.write('<ul>');
+        for (let i = 0; i < numbers.length; i++) {
+            document.write(`<li>${numbers[i]} cubed is ${cubes[i]}</li>`);
+        }
+        document.write('</ul>');
+    </script>
+</body>
+</html>

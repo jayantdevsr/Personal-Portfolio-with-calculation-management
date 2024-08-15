@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Series Sum Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="number"] {
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        p#result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Series Sum Calculator given number 555 series</h1>
+
+    
+    <label for="n">Enter the value of N:</label>
+    <input type="number" id="n" min="1" step="1" value="1">
+    <button onclick="calculateSum()">Calculate Sum</button>
+
+
+    <p id="result"></p>
+
+    <script>
+        function calculateSum() {
+          
+            const n = parseInt(document.getElementById("n").value);
+
+            
+            let sum = 0;
+            let givennumber = 5;
+
+            
+            for (let i = 1; i <= n; i++) {
+                sum += givennumber;
+
+                
+                if (i < n) {
+                    givennumber = givennumber * 10 + 5;
+                }
+            }
+
+            // Displeying the text
+            document.getElementById("result").textContent = `Sum of the first ${n} terms: ${sum}`;
+        }
+    </script>
+</body>
+</html>

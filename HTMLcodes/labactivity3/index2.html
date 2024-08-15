@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even Numbers Divisible by 7</title>
+</head>
+<body>
+    <h1>Find Even Numbers Divisible by 7</h1>
+    
+    <form id="rangeForm">
+        <label for="start">Start Range:</label>
+        <input type="number" id="start" name="start" required>
+        <br>
+        <label for="end">End Range:</label>
+        <input type="number" id="end" name="end" required>
+        <br>
+        <button type="button" onclick="findEvenNumbersDivisibleBy7()">Find Numbers</button>
+    </form>
+
+    <h2>Result:</h2>
+    <p id="result"></p>
+
+    <script>
+        function findEvenNumbersDivisibleBy7() {
+            const start = parseInt(document.getElementById("start").value);
+            const end = parseInt(document.getElementById("end").value);
+
+            let result = [];
+
+            for (let i = start; i <= end; i++) {
+                if (i % 2 === 0 && i % 7 === 0) {
+                    result.push(i);
+                }
+            }
+
+            document.getElementById("result").textContent = result.length === 0 ? "No numbers found." : result.join(", ");
+        }
+    </script>
+</body>
+</html>

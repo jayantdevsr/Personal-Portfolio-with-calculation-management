@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zoom Image Example</title>
+    <style>
+        .zoomable-container {
+            overflow: hidden;
+            width: 300px;
+            height: 300px;
+        }
+
+        .zoomable-image {
+            width: 100%;
+            transition: transform 0.7s ease;
+        }
+
+        
+        .hover-color:hover {
+        color: purple; 
+        }
+    </style>
+</head>
+<body>
+<center>
+<div class="zoomable-container">
+    <img src="/HTMLcodes/portfolio/image/landscape.png" alt="Zoomable Image" id="zoomImage" class="zoomable-image">
+</div>
+
+<button onclick="zoomIn()">Zoom In</button>
+<button onclick="zoomOut()">Zoom Out</button>
+
+<p>Move your mouse over text to check the performed task.</p>
+<p class="hover-color">Hover over the text to check the change in colour.</p>
+
+</center>
+
+<script>
+    const zoomImage = document.getElementById("zoomImage");
+    let currentScale = 1;
+    const maxScale = 2;
+    const minScale = 0.5;
+
+    function zoomIn() {
+        if (currentScale < maxScale) {
+            currentScale += 0.1;
+            zoomImage.style.transform = `scale(${currentScale})`;
+        }
+    }
+
+    function zoomOut() {
+        if (currentScale > minScale) {
+            currentScale -= 0.1;
+            zoomImage.style.transform = `scale(${currentScale})`;
+        }
+    }
+</script>
+
+</body>
+</html>

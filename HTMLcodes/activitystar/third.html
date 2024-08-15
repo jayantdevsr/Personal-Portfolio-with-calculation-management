@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reverse Array and Add 100</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            font-size: 16px;
+            width: 300px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        p#result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reverse Array and Add 100</h1>
+
+    <!-- Input field to enter the array elements -->
+    <label for="arrayInput">Enter array elements (comma-separated):</label>
+    <input type="text" id="arrayInput">
+    <button onclick="reverseAndAdd100()">Reverse and Add 100</button>
+
+    <!-- Display the result -->
+    <p id="result"></p>
+
+    <script>
+        function reverseAndAdd100() {
+            // Get the array input as a comma-separated string and split it into an array
+            const inputArray = document.getElementById("arrayInput").value.split(",");
+
+            // Initialize an empty array to store the reversed and modified elements
+            const reversedArray = [];
+
+            // Loop through the input array in reverse order
+            for (let i = inputArray.length - 1; i >= 0; i--) {
+                // Parse each element as an integer, add 100, and push it to the reversed array
+                const element = parseInt(inputArray[i].trim(), 10);
+                reversedArray.push(element + 100);
+            }
+
+            // Display the reversed and modified array
+            document.getElementById("result").textContent = `Reversed and Modified Array: [${reversedArray.join(", ")}]`;
+        }
+    </script>
+</body>
+</html>

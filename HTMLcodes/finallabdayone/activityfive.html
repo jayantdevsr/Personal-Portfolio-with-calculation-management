@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  #container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+  }
+  #calculator {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #f7f7f7;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+</style>
+<title>Bonus Calculator</title>
+</head>
+<body>
+  <h1>Bonus Calculator</h1>
+  <div id="container">
+    <div id="calculator">
+      <label for="pay">Enter Pay: </label>
+      <input type="number" id="pay" min="0">
+      <button onclick="calculateBonus()">Calculate</button>
+      <p id="result"></p>
+    </div>
+  </div>
+
+  <script>
+    function calculateBonus() {
+      var pay = parseFloat(document.getElementById("pay").value);
+      var bonus = 0;
+
+      if (pay > 3000) {
+        bonus = 300;
+      } else if (pay > 1600 && pay <= 3000) {
+        bonus = Math.min(pay * 0.1, 240);
+      } else if (pay <= 1600) {
+        bonus = Math.max(pay * 0.15, 100);
+      }
+
+      document.getElementById("result").innerHTML = "Bonus: $" + bonus.toFixed(2);
+    }
+  </script>
+</body>
+</html>

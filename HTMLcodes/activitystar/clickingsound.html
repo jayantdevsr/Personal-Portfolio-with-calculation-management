@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Play Audio on Button Click</title>
+</head>
+<body>
+    <center>
+    <audio id="myAudio" src="/HTMLcodes/activitystar/sounds/babycry.mp3" preload="auto"></audio>
+    <button id="crying">Crying</button>
+    <audio id="myAudio2" src="/HTMLcodes/activitystar/sounds/sup-bro-48286 (1).mp3" preload="auto"></audio>
+    <button id="goat">Goat</button>
+        <fieldset>
+            <button>Play</button>
+            <button>Pause</button>
+            <button>Stop</button>
+            <button>Rewind</button>
+            <button>Forward</button>
+        </fieldset>
+    <script>
+        const audio = document.getElementById('myAudio');
+        const crying = document.getElementById('crying');
+        const audio2 = document.getElementById('myAudio2');
+        const goat = document.getElementById('goat');
+
+        
+        crying.addEventListener('click', function () {
+            if (audio.paused) {
+            
+                audio.play();
+                crying.textContent = 'Pause Audio';
+            } else {
+                
+                audio.pause();
+                crying.textContent = 'Play Audio';
+            }
+        });
+
+        goat.addEventListener('click', function () {
+            if (audio2.paused) {
+            
+                audio2.play();
+                goat.textContent = 'Pause Audio';
+            } else {
+                
+                audio2.pause();
+                goat.textContent = 'Play Audio';
+            }
+        });
+    </script>
+    </center>
+</body>
+</html>

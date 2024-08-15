@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Find Groups of Three Successive Numbers</title>
+</head>
+<body>
+  <h1>Groups of Three Successive Numbers</h1>
+  <label for="inputNumber">Enter a number:</label>
+  <input type="number" id="inputNumber">
+  <button onclick="findGroups()">Find Groups</button>
+  <p>Groups of three successive numbers up to the entered number where the square of the middle number is greater by unity than the product of the other two numbers:</p>
+  <ul id="resultList"></ul>
+
+  <script>
+    function findGroups() {
+      const inputNumber = parseInt(document.getElementById('inputNumber').value);
+      const resultList = document.getElementById('resultList');
+      resultList.innerHTML = ''; // Clear previous results
+
+      if (isNaN(inputNumber) || inputNumber < 3) {
+        alert('Please enter a valid number greater than or equal to 3.');
+        return;
+      }
+
+      for (let firstNum = 1; firstNum < inputNumber - 2; firstNum++) {
+        const secondNum = firstNum + 1;
+        const thirdNum = firstNum + 2;
+
+        const middleSquared = Math.pow(secondNum, 2);
+        const product = firstNum * thirdNum;
+
+        if (middleSquared === product + 1) {
+          const listItem = document.createElement('li');
+          listItem.textContent = `${firstNum}, ${secondNum}, ${thirdNum} (${middleSquared} = ${firstNum} * ${thirdNum} + 1)`;
+          resultList.appendChild(listItem);
+        }
+      }
+    }
+  </script>
+</body>
+</html>
